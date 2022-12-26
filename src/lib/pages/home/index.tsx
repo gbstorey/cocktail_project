@@ -22,7 +22,9 @@ export default function Home() {
             Receive a random cocktail now.
           </Text>
           <Stack spacing={6} direction={'row'}>
+            <form action={"/recipe"}>
             <Button
+                type={"submit"}
                 rounded={'full'}
                 px={6}
                 colorScheme={'orange'}
@@ -30,6 +32,7 @@ export default function Home() {
                 _hover={{ bg: 'orange.500' }}>
               Get started
             </Button>
+            </form>
             {/*<Button rounded={'full'} px={6}>*/}
             {/*  Learn more*/}
             {/*</Button>*/}

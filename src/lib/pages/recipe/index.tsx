@@ -25,12 +25,12 @@ const createIngredientsMeasures = (drink: Drink) => {
   for (let i = 0; i < ingredientKeys.length; i++) {
     const strIngredient = drinkObject[ingredientKeys[i]];
     const strMeasure = drinkObject[measureKeys[i]];
-    if (!strIngredient || !strMeasure) {
+    if (!strIngredient) {
       continue;
     }
     ingredientsMeasures.push({
       ingredient: strIngredient,
-      measure: strMeasure,
+      measure: strMeasure||"No specfic amount",
     });
   }
   return ingredientsMeasures;
@@ -68,7 +68,7 @@ const Recipe = () => {
               fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
               pb={"5"}
             >
-              {drink.strCategory}
+              Ingredients
             </Text>
             {ingredientsMeasures.map((pair) => {
               return (
@@ -95,7 +95,9 @@ const Recipe = () => {
               {drink.strInstructions}
             </Text>
             <Stack spacing={6} direction={"row"}>
+              <form action={"/recipe"}>
               <Button
+                  type={"submit"}
                 rounded={"full"}
                 px={6}
                 mt={"10"}
@@ -103,8 +105,9 @@ const Recipe = () => {
                 bg={"orange.400"}
                 _hover={{ bg: "orange.500" }}
               >
-                Shop Ingredients
+                Get New Drink
               </Button>
+              </form>
             </Stack>
           </Container>
           <Box boxSize={"sm"} position={"relative"} mt={10}>
