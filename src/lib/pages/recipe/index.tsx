@@ -53,6 +53,16 @@ const Recipe = () => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 10, md: 28 }}
       >
+        <a href={"/"}>
+            <Text
+            color={"orange.400"}
+            maxW={"xl"}
+            fontSize={{ base: "1xl", sm: "2xl", md: "3xl" }}
+            pb={"3"}
+          >
+              &lt;   Home
+          </Text>
+        </a>
         <Heading
           fontWeight={600}
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
